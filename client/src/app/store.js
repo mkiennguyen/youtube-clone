@@ -1,5 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-const reducer = {};
+import homeSlice from "../features/Home/state/homeSlice";
+import watchVideoSlice from "../features/WatchVideo/state/watchVideoSlice";
 
-export const store = configureStore(reducer);
+const reducer = {
+  home: homeSlice,
+  watchVideo: watchVideoSlice,
+};
+
+const store = configureStore({ reducer });
+
+export default store;
