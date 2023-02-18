@@ -6,10 +6,9 @@ import "./assets/WatchVideo.css";
 import useWatchVideo from "./hooks/useWatchVideo";
 
 export default function WatchVideo() {
-  const { handleSubscribeVideo } = useWatchVideo();
   return (
     <div className="watchVideo">
-      <VideoPlaying handleSubscribeVideo={handleSubscribeVideo} />
+      <VideoPlaying {...useWatchVideo()} />
       <RecommendedVideos />
     </div>
   );

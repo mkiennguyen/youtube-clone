@@ -23,9 +23,14 @@ const watchVideoSlice = createSlice({
     subscribe: null,
     subscribeError: null,
     liked: null,
-    typingComment: null,
+    comment: null,
   },
 
+  reducers: {
+    typingComment: (state, action) => {
+      state.comment = action.payload;
+    },
+  },
   extraReducers: {
     [subscribeVideo.fulfilled]: (state, action) => {
       state.subscribe = action.payload;
@@ -40,3 +45,5 @@ const watchVideoSlice = createSlice({
 export default watchVideoSlice.reducer;
 
 export const watchVideoState = (state) => state.watchVideo;
+
+export const { typingComment } = watchVideoSlice.actions;

@@ -2,7 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../assets/VideoPlaying.css";
 
-export default function VideoPlaying({ handleSubscribeVideo }) {
+const MoreContent = () => {
+  return (
+    <span className="videoPlaying__descriptor__showContentBtn">Show more</span>
+  );
+};
+
+export default function VideoPlaying({
+  handleSubscribeVideo,
+  handleTypingComment,
+  comment,
+}) {
   return (
     <div className="videoPlaying">
       {/* place display video */}
@@ -104,12 +114,14 @@ export default function VideoPlaying({ handleSubscribeVideo }) {
             1 minutes ago
           </div>
         </div>
-        {/* {descriptor} */}
-        <div>
-          this is descriptor , one piece of the short word Lorem ipsum dolor,
-          sit amet consectetur adipisicing elit. Beatae doloremque dicta odio
-          eos delectus excepturi sint magnam porro labore voluptates blanditiis
-          obcaecati cum, sed numquam ad aperiam minus et pariatur!
+        {/* descriptor  */}
+        <div className="videoPlaying__descriptor__bottom">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis est
+          sunt, nostrum blanditiis consectetur minus tempore voluptatem
+          voluptates ratione quibusdam molestiae earum alias maxime reiciendis
+          itaque facere? Illo, corrupti inventore! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit.
+          <MoreContent />
         </div>
       </div>
 
@@ -132,12 +144,17 @@ export default function VideoPlaying({ handleSubscribeVideo }) {
               type="text"
               className="videoPlaying__bottom__comment__form__input"
               placeholder="Write your comment..."
+              onChange={handleTypingComment}
             />
             <div className="videoPlaying__bottom__comment__form__button">
               <button className="button--custom videoPlaying__bottom__comment__form__button__cancel">
                 cancel
               </button>
-              <button className="button--custom videoPlaying__bottom__comment__form__button__send">
+              <button
+                className={`button--custom videoPlaying__bottom__comment__form__button__send ${
+                  comment ? "enable__commentBtn" : ""
+                }`}
+              >
                 comment
               </button>
             </div>
@@ -152,8 +169,10 @@ export default function VideoPlaying({ handleSubscribeVideo }) {
 
 VideoPlaying.propTypes = {
   handleSubscribeVideo: PropTypes.func,
+  typing: PropTypes.func,
 };
 
 VideoPlaying.defaultProps = {
   handleSubscribeVideo: () => {},
+  typing: () => {},
 };

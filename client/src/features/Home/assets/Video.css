@@ -32,11 +32,12 @@
 }
 
 .video__info__videoTitle {
+  height: 4rem;
+  width: 20rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 4rem;
   text-transform: capitalize;
-  font-weight: 550;
+  font-weight: bold;
   line-height: 1.3;
   opacity: 0.9;
   margin-bottom: 0.5rem;

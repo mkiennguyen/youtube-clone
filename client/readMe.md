@@ -1,9 +1,11 @@
+> > > folder structure
+
 -public folder : contain html file, formats file: svg, png , jpg ,... ,video
 
 -src
 -----/app: folder highest of the app
 ----------/: store.js : save all state
------/common: contain assets , components and "hooks use many times"
+-----/common: contain assets , components and hooks can reusable
 -------------/assets: contain css files
 -------------/components: components only html and css
 -------------/hooks : custom hooks hidden complicated logic

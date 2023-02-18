@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import passport from "passport";
-
 import session from "express-session";
 
 import routes from "./routes/index.js";

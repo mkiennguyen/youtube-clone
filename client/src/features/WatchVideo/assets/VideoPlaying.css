@@ -136,6 +136,7 @@
 /* descriptor */
 
 .videoPlaying__descriptor {
+  height: 10rem;
   padding: 1.2rem;
   background-color: var(--interactWithVideo__buttonBackground);
   border-radius: 0.8rem;
@@ -154,6 +155,17 @@
 .videoPlaying__descriptor__top__views > span {
   text-transform: uppercase;
   margin: 0 0.5rem;
+}
+
+.videoPlaying__descriptor__bottom {
+  height: 6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.videoPlaying__descriptor__showContentBtn {
+  font-weight: bold;
+  box-shadow: -2rem 0rem 2rem rgb(229, 229, 229);
 }
 
 .watchVideo__interactWithVideo__menu__feel__like:hover,
@@ -201,7 +213,7 @@
 }
 
 .videoPlaying__bottom__comment__form__input:focus {
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.2rem solid black;
 }
 
 .videoPlaying__bottom__comment__form__button {
@@ -230,4 +242,9 @@
 
 .videoPlaying__bottom__comment__form__button__cancel:hover {
   background-color: var(--interactWithVideo__buttonHover);
+}
+
+.enable__commentBtn {
+  background-color: black;
+  color: white;
 }
